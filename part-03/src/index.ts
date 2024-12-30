@@ -41,13 +41,41 @@ client.on("interactionCreate", async (interaction) => {
     const embed: APIEmbed = {
         title: "Embed", // Title of the embed
         description: "This is an embed", // Description of the embed
-        color: 0x5865f2, // Color of the embed
-        thumbnail: {
-            url: "https://cdn.discordapp.com/embed/avatars/0.png"
-        },
+        color: 0x2d2af7, // Color of the embed
+        fields: [
+            {
+                name: "Field 1",
+                value: "Value 1",
+                inline: true
+            },
+            {
+                name: "Field 2",
+                value: "Value 2",
+                inline: true
+            }
+        ],
         timestamp: new Date().toISOString() // Timestamp of the embed
     }
 
-    await interaction.reply({ embeds: [embed] })
+    const embed2: APIEmbed = {
+        title: "Embed 2",
+        description: "This is another embed",
+        color: 0x5865f2,
+        fields: [
+            {
+                name: "Field 3",
+                value: "Value 3",
+                inline: false
+            },
+            {
+                name: "Field 4",
+                value: "Value 4",
+                inline: false
+            }
+        ],
+        timestamp: new Date().toISOString()
+    }
+
+    await interaction.reply({ embeds: [embed, embed2] })
 })
 

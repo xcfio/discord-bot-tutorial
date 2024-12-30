@@ -9,8 +9,8 @@
         "fmt": "prettier --config=.prettierrc --write src",
         "fmt:test": "prettier --config=.prettierrc --check src",
         "test": "tsc --noEmit",
-        "dev": "tsx watch src/error.ts",
-        "build": "esbuild src/error.ts --bundle --outfile=index.js --platform=node --packages=external",
+        "dev": "tsx watch src/index.ts",
+        "build": "esbuild src/index.ts --bundle --outfile=index.js --platform=node --packages=external",
         "start": "node index.js"
     },
     "dependencies": {
@@ -20,4 +20,3 @@
         "@types/node": "^22.10.1"
     }
 }
-
